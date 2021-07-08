@@ -1,6 +1,6 @@
-import {IAbstractFactory} from "./abstract-factory/interfaces";
-import {FactoryBmw} from "./abstract-factory/factory-bmw";
-import {FactoryAudi} from "./abstract-factory/factory-audi";
+/** import {IAbstractFactory} from "./abstract-factory2/interfaces";
+import {FactoryBmw} from "./abstract-factory2/factory-bmw";
+import {FactoryAudi} from "./abstract-factory2/factory-audi";
 
 
 const factoryTest1: IAbstractFactory = new FactoryBmw();
@@ -13,3 +13,4 @@ const factoryTest2: IAbstractFactory = new FactoryAudi();
 const motobike1 = factoryTest2.createMotorbike();
 motobike1.raiseSpeed();
 
+ **/
