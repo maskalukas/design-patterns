@@ -7,6 +7,8 @@ import {NosqlDbCreator} from "./factory-method/creator-dbs/nosql-db-creator";
 import {FamilyHouseBuilder} from "./builder/builders/family-house-builder";
 import {IBuilderHouse} from "./builder/interface";
 import {BuilderDirector} from "./builder/builders/builder-director";
+import {Person} from "./prototype/Person";
+import {Dog} from "./prototype/Dog";
 
 
 /** ABSTRACT FACTORY PATTERN
@@ -40,5 +42,12 @@ Director.buildHouseWithTwoFloors()
 Builder.getHouse().showParts();
  **/
 
+
+/** PROTOTYPE PATTERN
+const Me = new Person("Lukáš",23);
+Me.setAnimal(new Dog("Borek"));
+const ClonnedMe = Me.clone();
+console.log(ClonnedMe === Me, Me === Me);
+ **/
 
 
