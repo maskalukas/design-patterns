@@ -10,6 +10,9 @@ import {BuilderDirector} from "./builder/builders/builder-director";
 import {Person} from "./prototype/Person";
 import {Dog} from "./prototype/Dog";
 import {MemorySingleton} from "./singleton/Singleton";
+import {Adapter} from "./adapter/Adapter";
+import {BinarySystem} from "./adapter/BinarySystem";
+import {DecimalSystem} from "./adapter/DecimalSystem";
 
 
 /** ABSTRACT FACTORY PATTERN
@@ -70,4 +73,9 @@ console.log(ClonnedMe === Me, Me === Me);
  **/
 
 
+/** ADAPTER PATTERN
+const BinAndDecAdapter = new Adapter(new DecimalSystem());
+BinAndDecAdapter.checkIfCurrentYearsAreEqual();
+ ======================================================================
+ **/
 
