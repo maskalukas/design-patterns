@@ -9,6 +9,7 @@ import {IBuilderHouse} from "./builder/interface";
 import {BuilderDirector} from "./builder/builders/builder-director";
 import {Person} from "./prototype/Person";
 import {Dog} from "./prototype/Dog";
+import {MemorySingleton} from "./singleton/Singleton";
 
 
 /** ABSTRACT FACTORY PATTERN
@@ -17,10 +18,11 @@ const car1 = factoryTest1.createCar();
 car1.turnRadioOn();
 car1.turnRadioOff();
 
-
 const factoryTest2: IAbstractFactory = new FactoryAudi();
 const motobike1 = factoryTest2.createMotorbike();
 motobike1.raiseSpeed();
+
+ ======================================================================
  **/
 
 
@@ -32,14 +34,19 @@ console.log(creator.createBaseDb().printCountOfAllTables());
 // mongodb
 const creator2 = new NosqlDbCreator();
 console.log(creator2.createBaseDb().printCountOfAllTables());
+
+ ======================================================================
  **/
 
 /** BUILDER PATTERN
+ *
 const Builder: IBuilderHouse<any> = new FamilyHouseBuilder();
 const Director = new BuilderDirector();
 Director.setBuilder(Builder);
 Director.buildHouseWithTwoFloors()
 Builder.getHouse().showParts();
+
+ ======================================================================
  **/
 
 
@@ -48,6 +55,19 @@ const Me = new Person("Lukáš",23);
 Me.setAnimal(new Dog("Borek"));
 const ClonnedMe = Me.clone();
 console.log(ClonnedMe === Me, Me === Me);
+
+ ======================================================================
  **/
+
+/** SINGLETON PATTERN
+ const Memory = MemorySingleton.getInstance();
+ Memory.addName("Lukas");
+ Memory.addName("David");
+ Memory.addName("Adam");
+ Memory.printNames();
+
+ ======================================================================
+ **/
+
 
 
