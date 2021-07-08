@@ -4,9 +4,12 @@ import {FactoryAudi} from "./abstract-factory2/factory-audi";
 import {RelationalDbCreator} from "./factory-method/creator-dbs/relational-db-creator";
 import {CreatorDb} from "./factory-method/creator";
 import {NosqlDbCreator} from "./factory-method/creator-dbs/nosql-db-creator";
+import {FamilyHouseBuilder} from "./builder/builders/family-house-builder";
+import {IBuilderHouse} from "./builder/interface";
+import {BuilderDirector} from "./builder/builders/builder-director";
 
 
-/** ABSTRACT FACTORY
+/** ABSTRACT FACTORY PATTERN
 const factoryTest1: IAbstractFactory = new FactoryBmw();
 const car1 = factoryTest1.createCar();
 car1.turnRadioOn();
@@ -19,7 +22,7 @@ motobike1.raiseSpeed();
  **/
 
 
-/** FACTORY METHOD
+/** FACTORY METHOD PATTERN
 // mysql
 const creator: CreatorDb = new RelationalDbCreator();
 console.log(creator.createBaseDb().printCountOfAllTables());
@@ -28,5 +31,14 @@ console.log(creator.createBaseDb().printCountOfAllTables());
 const creator2 = new NosqlDbCreator();
 console.log(creator2.createBaseDb().printCountOfAllTables());
  **/
+
+/** BUILDER PATTERN
+const Builder: IBuilderHouse<any> = new FamilyHouseBuilder();
+const Director = new BuilderDirector();
+Director.setBuilder(Builder);
+Director.buildHouseWithTwoFloors()
+Builder.getHouse().showParts();
+ **/
+
 
 
